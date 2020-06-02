@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Taiko – An HTML5 Presentation</title>
+
+		<meta name="description" content="A node.js library for testing modern web applications">
+		<meta name="author" content="Amit Sarkar">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				
+				<!-- Opening Slide -->
+				<section>
+					<a target="_blank" href="https://taiko.dev/">
+						<img style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" src="assets/images/taiko_logo.svg" alt="taiko logo"></img>
+					</a>
+					<h3>Reliable Browser Automation</h3>
+					<p>
+						<small>Created by <a target="_blank" href="https://www.thoughtworks.com/">Thoughtworks</a> and <a target="_blank" href="https://github.com/getgauge/taiko/graphs/contributors">contributors</a></small>
+					</p>
+					<p><small>Presentation by <span style="color:chocolate">Amit Sarkar</span></small></p>
+				</section>
+
+				<!-- Thank you -->
+				<section data-transition="convex" data-background-transition="zoom">
+					<p style="font-size:100px">Thank you <a target="_blank" href="https://www.meetup.com/QABabble-online/"><b>QA Babble</b></a></p>
+				</section>
+
+				<!-- Thank you -->
+				<section data-transition="convex" data-background-transition="zoom">
+					<p style="font-size:100px">Thank you <a target="_blank" href="https://in.linkedin.com/in/zabilcm"><b>Zabil</b></a></p>
+				</section>
+
+				<!-- reveal.js -->
+				<section data-transition="convex" data-background-transition="zoom">
+					<h2 style="color:chocolate">Presentation made in</h2>
+					<a target="_blank" href="https://revealjs.com/"><img style="height: 180px; padding:10px; background: transparent;" src="https://static.slid.es/reveal/logo-v1/reveal-white-text.svg" alt="reveal.js logo"></a>
+				</section>
+
+				<!-- Brief introduction to tool -->
+				<section data-transition="convex" data-background-transition="zoom">
+					<p><b style="color:dodgerblue">Taiko</b> is a <b style="color:chocolate">browser automation tool</b> that makes it easy to drive your web browser with a friendly<br> <b style="color:gold">Domain-Specific Language</b> (DSL).</p>
+				</section>
+
+				<!-- Agenda slides -->
+				<section>
+					<h1 style="color:chocolate">AGENDA</h1>
+					<ul>
+						<li>About me</li>
+						<li>E2E browser Tests</li>
+						<li>Taiko</li>
+						<li>Test framework with Taiko</li>
+						<li>Tool comparison</li>
+						<li>Limitations</li>
+						<li>Demo</li>
+						<li>Reference</li>
+						<li>Contact</li>
+					</ul>
+				</section>
+
+				<!-- About presenter -->
+				<section>
+					<section>
+						<h1 style="color:chocolate">About me</h1>
+						<p>Worked over 13+ years in the software testing world.</p>
+						<p>Tested mobile sites, web applications and desktop applications.</p>
+						<p>Worked in large enterprises and in start-ups.</p>
+					</section>
+					<section>
+						<h2 style="color:chocolate">Worked for</h2>
+						<p>
+							<img style="background:transparent;" src="assets/images/TCS_logo.svg" alt="tcs"></img>
+							<img style="background:transparent;" src="assets/images/OB_logo.png" alt="ob"></img>
+							<img style="height: 180px; padding:10px; background: transparent;" src="assets/images/RDG_logo.svg" alt="rdg"></img>
+							<img style="background:transparent;" src="assets/images/Privax.png" alt="privax"></img>
+						</p>
+					</section>
+					<section>
+						<h2 style="color:chocolate">Online presence</h2>
+						<p><b>LinkedIn</b> - <a target="_blank" href="https://www.linkedin.com/in/amitsarkar007/">@amitsarkar007</a></p>
+						<p><b>GitHub</b> - <a target="_blank" href="https://github.com/amitsarkar007">@amitsarkar007</a></p>
+					</section>
+				</section>
+
+				<!-- What are End-to-end browser tests -->
+				<section>
+					<section>
+						<h1 style="color:chocolate">E2E Browser Tests</h1>
+						<img style="height: 450px; background: transparent;" src="assets/images/user-journey-test.png" alt="user journey"></img>
+					</section>
+					<section>
+						<h2 style="color:chocolate">E2E Browser Tests</h2>
+						<h3 style="color:dodgerblue">Challenges</h3>
+						<ul>
+							<li>Takes long time to execute</li>
+							<li>Not part of development lifecycle</li>
+							<li>Flaky</li>
+							<li>Long feedback cycles</li>
+							<li>Tough to read or modify</li>
+						</ul>
+						<aside class="notes">
+							Tests should change only when there is a change in functionality. 
+							A change in the structure of a web page should not impact a test validating functional correctness.
+							Therefore, tools with lesser dependency on DOM is better for writing and maintaining tests!
+						</aside>
+					</section>
+					<section>
+						<h2 style="color:chocolate">E2E Browser Tests</h2>
+						<h3 style="color:dodgerblue">Importance</h3>
+						<p>Tests whether the flow of application is performing as designed, from start to finish</p>
+					</section>
+					<section>
+						<h2 style="color:chocolate">E2E Browser Tests</h2>
+						<h3 style="color:dodgerblue">Goal</h3>
+						<p>Simulate what a real user scenario looks like from start to finish</p>
+					</section>
+				</section>
+
+				<!-- All about Taiko -->
+				<section>
+					<section>
+						<h1 style="color:chocolate">INTRODUCTION</h1>
+						<p>Taiko is a free and <a target="_blank" href="https://github.com/getgauge/taiko">open source</a> browser automation tool built by <a target="_blank" href="https://www.thoughtworks.com/news/taiko">Thoughtworks</a>.</p>
+					</section>
+					<section>
+						<h2 style="color:chocolate">Open source history</h2>
+						<img style="height: 450px; background: transparent;" src="assets/images/cucumber-history-timeline.png" alt="cucumber"></img>
+						<p>SOURCE - <a target="_blank" href="https://thirstyhead.com/user-journey-testing/slides/en-us/#9">Thirstyhead.com</a> by <a target="_blank" href="https://twitter.com/scottdavis99">Scott Davis</a></p>
+					</section>
+					<section>
+						<h2 style="color:chocolate">Open source history</h2>
+						<img style="height: 450px; background: transparent;" src="assets/images/selenium-history-timeline.png" alt="selenium"></img>
+						<p>SOURCE - <a target="_blank" href="https://thirstyhead.com/user-journey-testing/slides/en-us/#19">Thirstyhead.com</a> by <a target="_blank" href="https://twitter.com/scottdavis99">Scott Davis</a></p>
+						<aside class="notes">
+							ThoughtWorks has been writing free and open source automated browser testing tools for over 15 years. 
+							Selenium RC was released in 2004, and WebDriver in 2007. 
+							Today, there are a lot of free and open source tools to automate browser based tests. 
+							Unfortunately, problems like flakiness and the cost of test maintenance have plagued this category of tests for a long time.
+						</aside>
+					</section>
+					<section>
+						<h2 style="color:chocolate">Meaning / Origin</h2>
+						<img src="assets/images/taiko meaning.png" alt="taiko meaning"></img>
+					</section>
+					<section>
+						<h2 style="color:chocolate">Inspiration #1</h2>
+						<img src="assets/images/puppeteer.png" alt="puppeteer"></img>
+						<p><a target="_blank" href="https://github.com/puppeteer/puppeteer">Puppeteer</a></p>
+					</section>
+					<section>
+						<h2 style="color:chocolate">Inspiration #2</h2>
+						<img src="assets/images/helium-demo.gif" alt="helium"></img>
+						<p><a target="_blank" href="https://github.com/mherrmann/selenium-python-helium">Helium</a></p>
+					</section>
+					<section>
+						<p><a target="_blank" style="color:chocolate" href="https://github.com/getgauge/taiko">Taiko</a></p>
+						<img src="assets/images/taiko.gif" alt="taiko_gif"></img>
+					</section>
+					<section>
+						<h2 style="color:chocolate">Featured In</h2>
+						<a target="_blank" href="https://www.thoughtworks.com/radar/languages-and-frameworks/taiko"><img style="height: 570px" src="assets/images/tech radar 2019.png" alt="tech radar"></img></a>
+					</section>
+					<section>
+						<h2 style="color:chocolate">A Node.js library</h2>
+						<img style="height: 420px; background: transparent;" src="assets/images/taiko_npm.png" alt="taiko_npm">
+						<p>It is a <a target="_blank" href="https://www.npmjs.com/package/taiko">node</a> library with a clear and concise API to automate the chrome browser.</p>
+					</section>
+					<section>
+						<h2 style="color:chocolate">Uses DevTools API</h2>
+						<img style="height: 180px; background: transparent;" src="assets/images/cdp_logo.png" alt="cdp logo"></img>
+						<p>It uses the <a target="_blank" href="https://chromedevtools.github.io/devtools-protocol/">Chrome DevTools Protocol</a> API and is built ground up to test modern web applications.</p>
+						<aside class="notes">
+							Browsers are now starting to adopt standards for better web compatibility and less fragmentation of underlying web platforms.
+							Browsers with CDP support.
+							The Firefox team is working on adding support for CDP.
+							Taiko scripts are standards compliant and portable once browsers adopt these standards.
+						</aside>
+					</section>
+					<section>
+						<h2 style="color:chocolate">Custom Plugins</h2>
+						<img src="assets/images/taiko-plugins.png" alt="taiko-plugins">
+						<p>Taiko’s plugin architecture allows you to extend it in ways that suit your requirements.</p>
+						<aside class="notes">
+							Taiko features can be extended via plugins which can allow users to take more advantage of Chrome Devtools Protocol.
+							Screencast, screenchecks, accessibility, storage, android support.
+						</aside>
+					</section>
+					<section>
+						<h2 style="color:chocolate">Smart selectors</h2>
+						<img src="assets/images/smart_selectors_blue.svg" alt="selectors">
+						<p>Write test scripts by looking at a web page without inspecting it’s source code.</p>
+						<aside class="notes">
+							Taiko allows you to select elements on the page based on what you see. 
+							It's not based on the specific underlying structure that only a developer sees.
+						</aside>
+					</section>
+					<section>
+						<h2 style="color:chocolate">Implicit waits</h2>
+						<img src="assets/images/waits_blue.svg" alt="waits">
+						<p>Scripts written in Taiko are free of explicit local or global waits and the flakiness.</p>
+						<aside class="notes">
+							Modern test libraries "await" the element to appear instead. 
+							This makes your tests run more resilient to things like slow network connections. 
+							Implicit waits increase predictability.
+							Taiko explicitly chooses reliability over extreme performance. 
+							If this tradeoff is unsuitable, you can choose to override it to improve performance. 
+							Explicit waits can be defined for a given action.
+						</aside>
+					</section>
+					<section>
+						<h2 style="color:chocolate">Interactive recorder</h2>
+						<img src="assets/images/recorder_blue.svg" alt="recorder">
+						<p>Record and write maintainable test scripts within seconds using Taiko's unique recorder which is a REPL to automate the browser.</p>
+						<aside class="notes">
+							Unlike a UI recorder, Taiko’s REPL takes instructions given in the terminal and performs the action on the browser. 
+							The user can continue to give instructions to complete a workflow. 
+							Only successful actions are recorded as a script. 
+							This generates human readable code and keeps the learning curve low.
+						</aside>
+					</section>
+					<section>
+						<h2 style="color:chocolate">Request & response stubbing</h2>
+						<img src="assets/images/request_blue.svg" alt="request">
+						<p>Mock and stub XHR request from the browser with Taiko's intercept API.</p>
+					</section>
+					<section>
+						<h2 style="color:chocolate">Acronyms</h2>
+						<ol>
+							<li><span style="color:dodgerblue">XHR</span> stands for <span style="color:tomato">XML HTTP Request</span>. It's used to update parts of a web page, without reloading the whole page.</li><br>
+							<li><span style="color:dodgerblue">REPL</span> stands for <span style="color:tomato">Read Eval Print Loop</span>. It is an interactive programming environment that takes single user inputs, executes them, and returns the result to the user</li>
+						</ol>
+					</section>
+				</section>
+
+				<!-- A framework with Taiko -->
+				<section>
+					<section>
+						<h1 style="color:chocolate">Test Framework</h1>
+						<p>What would a test framework with Taiko look like?</p>
+					</section>
+					<section>
+						<h2 style="color:chocolate">Programming Language</h2>
+						<img style="height: 180px; padding:10px; background: transparent;" src="assets/images/javascript.svg" alt="js logo"></img>
+						<aside class="notes">
+							Taiko only supports Javascript to author test code, because it’s built on top of CDP (Chrome DevTools protocol) and the best library for working with CDP is in JavaScript.
+							Taiko tests can be written in languages that compile to Javascript for example Typescript.
+						</aside>
+					</section>
+					<section>
+						<h2 style="color:chocolate">Test Runner</h2>
+						<p>
+							<a target="_blank" href="https://gauge.org/"><img style="height: 180px; padding:10px; background: transparent;" src="assets/images/gauge-logo_white.svg" alt="gauge logo"></img></a>
+							<a target="_blank" href="https://mochajs.org/"><img style="height: 180px; padding:10px; background: transparent;" src="assets/images/mocha_logo.svg" alt="mocha logo"></img></a>
+							<a target="_blank" href="https://jestjs.io/"><img style="height: 180px; padding:10px; background: transparent;" src="assets/images/jest-outline.svg" alt="jest logo"></img></a>
+						</p>	
+					</section>
+					<section>
+						<h2 style="color:chocolate">Library</h2>
+						<p>
+							<a target="_blank" href="https://nodejs.org/"><img style="height: 180px; padding:10px; background: transparent;" src="assets/images/nodejs_logo.svg" alt="node logo"></img></a>
+							<img style="height: 180px; padding:10px; background: transparent;" src="assets/images/taiko_logo.svg" alt="taiko logo"></img>
+						</p>	
+					</section>
+					<section>
+						<h2 style="color:chocolate">Protocol</h2>
+						<a target="_blank" href="https://chromedevtools.github.io/devtools-protocol/"><img style="height: 180px; padding:10px; background: transparent;" src="assets/images/cdp_logo.png" alt="cdp logo"></img></a>
+					</section>
+					<section>
+						<h2 style="color:chocolate">Browser</h2>
+						<p>
+							<img style="height: 180px; padding:10px; background: transparent;" src="assets/images/Chromium_logo.svg" alt="chromium logo"></img>
+							<img style="height: 180px; padding:10px; background: transparent;" src="assets/images/chrome-logo.svg" alt="chrome logo"></img>
+							<img style="height: 180px; padding:10px; background: transparent;" src="assets/images/edge.png" alt="edge logo"></img>
+							<img style="height: 180px; padding:10px; background: transparent;" src="assets/images/opera-2.svg" alt="opera logo"></img>
+						</p>	
+					</section>
+					<section>
+						<h2 style="color:chocolate">Front-end JS Framework</h2>
+						<p>
+							<a target="_blank" href="https://angularjs.org/"><img style="height: 180px; padding:10px; background: transparent;" src="assets/images/angular-icon.svg" alt="angular logo"></img></a>
+							<a target="_blank" href="https://vuejs.org/"><img style="height: 180px; padding:10px; background: transparent;" src="assets/images/vue-js-1.svg" alt="vue logo"></img></a>
+							<a target="_blank" href="https://reactjs.org/"><img style="height: 180px; padding:10px; background: transparent;" src="assets/images/react-2.svg" alt="react logo"></img></a>
+						</p>
+						<aside class="notes">
+							Taiko is a simple NodeJS library that can easily integrate with any Javascript test frameworks.
+						</aside>	
+					</section>
+				</section>
+
+				<!-- Comparison with other tools -->
+				<section>
+					<section>
+						<h1 style="color:chocolate">Tool Comparison</h1>
+						<p>How does Taiko compare with other browser automation tools?</p>
+					</section>
+					<section>
+						<a target="_blank" href="https://gauge.org/2019/08/21/how-taiko-compares-to-other-browser-automation-tools/"><img src="assets/images/taiko_comparison_infographic_blog_post.jpg" alt="taiko_comparison"></img></a>
+					</section>
+				</section>
+
+				<!-- Limitations -->
+				<section>
+					<section>
+						<h1 style="color:chocolate">Limitations</h1>
+						<p>Are there any limitations to Taiko?</p>
+					</section>
+					<section>
+						<h2 style="color:chocolate">Languages not Supported</h2>
+						<p>
+							<img style="height: 180px; padding:10px; background: transparent;" src="assets/images/c sharp.svg" alt="c# logo"></img>
+							<img style="height: 180px; padding:10px; background: transparent;" src="assets/images/java.svg" alt="java logo"></img>
+							<img style="height: 180px; padding:10px; background: transparent;" src="assets/images/python-5.svg" alt="python logo"></img>
+							<img style="height: 180px; padding:10px; background: transparent;" src="assets/images/ruby.svg" alt="ruby logo"></img>
+						</p>
+					</section>
+					<section>
+						<h2 style="color:chocolate">Browsers not Supported</h2>
+						<p>
+							<img style="height: 180px; padding:10px; background: transparent;" src="assets/images/internet-explorer-4.svg" alt="ie11 logo"></img>
+							<img style="height: 180px; padding:10px; background: transparent;" src="assets/images/firefox-6.svg" alt="firefox logo"></img>
+							<img style="height: 180px; padding:10px; background: transparent;" src="assets/images/safari-3.svg" alt="safari logo"></img>
+						</p>
+					</section>
+				</section>
+
+				<!-- Demo -->
+				<section>
+					<h1 style="color:chocolate">Demo</h1>
+					<p>It's demo time :)</p>
+					<aside class="notes">
+						Pause demo by pressing the key B
+					</aside>
+				</section>
+
+				<!-- Taiko website -->
+				<section data-background-iframe="https://taiko.dev" data-background-interactive>
+				</section>
+
+				<!-- References -->
+				<section style="text-align: left;">
+					<h1 style="color:chocolate">Reference</h1>
+					<ul>
+						<li>Taiko (Main) - <a target="_blank" href="https://taiko.dev/">https://taiko.dev/</a><br></li>
+						<li>Taiko (Github) - <a target="_blank" href="https://github.com/getgauge/taiko">https://github.com/getgauge/taiko</a><br></li>
+						<li>Taiko (Spectrum) - <a target="_blank" href="https://spectrum.chat/taiko">https://spectrum.chat/taiko</a><br></li>
+						<li>Taiko (Documentation) - <a target="_blank" href="https://docs.taiko.dev/">https://docs.taiko.dev/</a><br></li>
+					</ul>
+					<p>Use <em style="color:dodgerblue">Github</em> to <em style="color:gold">post issues</em> with Taiko and <em style="color:dodgerblue">Spectrum</em> to <em style="color:gold">ask questions</em> about Taiko to the team</p>
+				</section>
+
+				<!-- Final Slide -->
+				<section style="text-align: left;">
+					<h1 style="color:chocolate">Thank You</h1>
+					<p>
+						Email - <b style="color:dodgerblue">amit.sarkar007@gmail.com</b> <br>
+						Mobile - <b style="color:dodgerblue">+44 74932 51059</b>
+					</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		
+		<script>
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+		</script>
+	
+	</body>
+
+</html>
