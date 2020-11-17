@@ -54,7 +54,7 @@
     "node-qunit-puppeteer": "^2.0.1",
     "qunit": "^2.10.0",
     "rollup": "^2.10.9",
-    "rollup-plugin-terser": "^5.3.0",
+    "rollup-plugin-terser": "^5.3.1",
     "yargs": "^15.1.0"
   },
   "browserslist": "> 0.5%, IE 11, not dead",
@@ -94,5 +94,9 @@
       "no-eq-null": 2,
       "no-unused-expressions": 0
     }
+  },
+  "dependencies": {
+    "serialize-javascript": "^5.0.1",
+    "yargs-parser": "^20.2.4"
   }
 }
